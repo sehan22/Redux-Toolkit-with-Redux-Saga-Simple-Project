@@ -7,10 +7,13 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga"
 import {configureStore} from "@reduxjs/toolkit";
+import catReducer from './catState';
 
 const saga = createSagaMiddleware();
 const store = configureStore({
-    reducer: {},
+    reducer: {
+        cats: catReducer
+    },
     middleware: [saga]
 })
 
